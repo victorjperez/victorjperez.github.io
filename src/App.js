@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import apiCall from "./helpers/apiCall";
+const InformationContext = React.createContext({});
 function App() {
+  const [person, setPerson] = useState({})
+  const [loadedData, setLoadedData] = useState({})
+  useEffect(() =>{
+     apiCall().then(
+       (person) => {
+         console.log(person);
+         setPerson(person)
+         setLoadedData(true)
+       },
+       (error) => {
+         console.log(error);
+       }
+     );
+    console.log(person)
+  },[])
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +26,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {loadedData ? 
+        
+        (<InformationContext.Provider value={person}>
+          <p>{JSON.stringify(person)}</p>
+        </InformationContext.Provider>) : ""}
       </header>
     </div>
   );

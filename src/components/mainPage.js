@@ -3,7 +3,7 @@ import { createUrl } from "../sanity";
 import { InformationContext } from "../helpers/informationContext";
 
 import "./styles/mainPage.scss";
-
+import Divider from './assets/fancyDivider.svg'
 function MainPage() {
     const info = useContext(InformationContext);
     const jobList = info.jobs.map((job) => (
@@ -13,7 +13,7 @@ function MainPage() {
         <p>{job.description.en}</p>
         <p className="dates">
           {job.start.substring(0, 4)} -{" "}
-          {job.end !== undefined ? job.end.substring(0, 4) : "present"}
+          {job.end !== undefined ? job.end.substring(0, 4) : "Present"}
         </p>
       </div>
     ));
@@ -26,7 +26,7 @@ function MainPage() {
         <p>{project.description.en}</p>
         <p className="dates">
           {project.start.substring(0, 4)} -{" "}
-          {project.end !== undefined ? project.end.substring(0, 4) : "present"}
+          {project.end !== undefined ? project.end.substring(0, 4) : "Present"}
         </p>
       </div>
     ));
@@ -41,10 +41,12 @@ function MainPage() {
             {info.education[0].end.substring(0, 4)}
           </p>
         </div>
+        <img src={Divider} alt="Section Divider" />
         <div className="section-container">
           <h2>Experience</h2>
           {jobList}
         </div>
+        <img src={Divider} alt="Section Divider" />
         <div className="section-container">
           <h2>Projects</h2>
           {projectList}

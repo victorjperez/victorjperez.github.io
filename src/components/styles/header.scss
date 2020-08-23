@@ -1,0 +1,44 @@
+nav {
+    background-color: white;
+    width: 100vw;
+    height: 68px;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        font-size: 20px;
+        margin: 0 35px;
+        font-style: unset;
+    }
+    #nav-logo {
+        text-decoration: none;
+        text-decoration: none;
+        font-size: 45px;
+        font-style: italic;
+        color: black;
+        text-shadow: 1px 1px 0 rgb(0, 0, 0);
+        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+        &:hover {
+            text-shadow: 1px 1px 0 black, 2px 2px 0 #8254EB, 3px 3px 0 white, 4px 4px 0 black;
+            transition: .1s;
+        }
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        a {
+            text-decoration: none;
+        }
+    }
+}

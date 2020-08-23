@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+// Components
+import Header from './components/header'
+import Intro from './components/intro'
+// Helpers
 import apiCall from "./helpers/apiCall";
-const InformationContext = React.createContext({});
+import { InformationContext } from './helpers/informationContext'
 function App() {
   const [person, setPerson] = useState({})
-  const [loadedData, setLoadedData] = useState({})
+  const [loadedData, setLoadedData] = useState(false)
   useEffect(() =>{
      apiCall().then(
        (person) => {
@@ -21,17 +25,15 @@ function App() {
   },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        {loadedData ? 
-        
-        (<InformationContext.Provider value={person}>
+      <Header />
+      {loadedData ? (
+        <InformationContext.Provider value={person}>
+          <Intro />
           <p>{JSON.stringify(person)}</p>
-        </InformationContext.Provider>) : ""}
-      </header>
+        </InformationContext.Provider>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

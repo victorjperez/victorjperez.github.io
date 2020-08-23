@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Cardo|Fira+Code&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body {
+    font-family: "Cardo", serif;
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
+a {
+    font-style: italic;
+}
+a:hover {
+    text-shadow: 1px 1px 0 #8254eb, 2px 2px 0 white, 3px 3px 0 black;
+    transition: 0.1s;
+}

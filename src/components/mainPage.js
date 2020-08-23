@@ -1,9 +1,15 @@
 import React, { useContext } from "react";
-import { createUrl } from "../sanity";
 import { InformationContext } from "../helpers/informationContext";
 
 import "./styles/mainPage.scss";
+
+// Images
 import Divider from './assets/fancyDivider.svg'
+import Jaw from './assets/Jaw.svg'
+import Wireless from "./assets/wireless.svg";
+import Rania from "./assets/rania.svg";
+import RegRot from "./assets/RegRot.svg";
+
 function MainPage() {
     const info = useContext(InformationContext);
     const jobList = info.jobs.map((job) => (
@@ -22,6 +28,10 @@ function MainPage() {
         className={"project-container"}
         key={project._id}
       >
+        {project.title.en === "RegRotator" ? (<img src={RegRot} alt="RegRotator Logo" width="250px" />) : ""}
+        {project.title.en === "RANIA Control System" ? (<img src={Rania} alt="Rania Logo" width="250px" />) : ""}
+        {project.title.en === "Writing" ? (<img src={Jaw} alt="Jaw" width="250px" />) : ""}
+        {project.title.en === "Wireless Fall 2019" ? (<img src={Wireless} alt="Wireless" width="400px" />) : ""}
         <h3>{project.title.en}</h3>
         <p>{project.description.en}</p>
         <p className="dates">

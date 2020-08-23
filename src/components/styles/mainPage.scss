@@ -28,6 +28,7 @@
         }
         p {
             font-size: 1.2em;
+            margin: 1% 0;
         }
         .dates {
             font-style: italic;
@@ -36,5 +37,18 @@
     .job-container,.project-container {
         margin: 3% auto;
         max-width: 80%;
+    }
+    .tech-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: .5% auto;
+        max-width: 60%;
+        .tech-title {
+            font-size: .9em;
+            padding: 0 7px;
+            font-style: italic;
+        }
     }
 }

@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import format from "date-fns/format";
+
 import { InformationContext } from "../helpers/informationContext";
 
 import "./styles/mainPage.scss";
@@ -18,8 +20,8 @@ function MainPage() {
         <h4>{job.title.en}</h4>
         <p>{job.description.en}</p>
         <p className="dates">
-          {job.start.substring(0, 4)} -{" "}
-          {job.end !== undefined ? job.end.substring(0, 4) : "Present"}
+          {format(new Date(job.start), 'MMM yyyy')} -{" "}
+          {job.end !== undefined ? format(new Date(job.end), 'MMM yyyy') : "Present"}
         </p>
       </div>
     ));
@@ -28,16 +30,21 @@ function MainPage() {
         className={"project-container"}
         key={project._id}
       >
-        {project.title.en === "RegRotator" ? (<img src={RegRot} alt="RegRotator Logo" width="250px" />) : ""}
+        {project.title.en === "RegRotator" ? (<img src={RegRot} alt="RegRotator Logo" width="220px" />) : ""}
         {project.title.en === "RANIA Control System" ? (<img src={Rania} alt="Rania Logo" width="250px" />) : ""}
         {project.title.en === "Writing" ? (<img src={Jaw} alt="Jaw" width="250px" />) : ""}
-        {project.title.en === "Wireless Fall 2019" ? (<img src={Wireless} alt="Wireless" width="400px" />) : ""}
+        {project.title.en === "Wireless Fall 2019" ? (<img src={Wireless} alt="Wireless" width="450px" />) : ""}
         <h3>{project.title.en}</h3>
         <p>{project.description.en}</p>
         <p className="dates">
-          {project.start.substring(0, 4)} -{" "}
-          {project.end !== undefined ? project.end.substring(0, 4) : "Present"}
+          {format(new Date(project.start), 'MMM yyyy')} -{" "}
+          {project.end !== undefined ? format(new Date(project.end), 'MMM yyyy') : "Present"}
         </p>
+        <span className="tech-section">
+        {project.technologies.map((tech) => (
+          <p className="tech-title">{tech}</p>
+        ))}
+        </span>
       </div>
     ));
     return (
@@ -47,8 +54,9 @@ function MainPage() {
           <h3>{info.education[0].degree.en}</h3>
           <h4>{info.education[0].institutionName.en}</h4>
           <p className="dates">
-            {info.education[0].start.substring(0, 4)} -{" "}
-            {info.education[0].end.substring(0, 4)}
+            {format(new Date(info.education[0].start), "MMM yyyy")}{" "}
+            -{" "}
+            {format(new Date(info.education[0].end), "MMM yyyy")}
           </p>
         </div>
         <img src={Divider} alt="Section Divider" />

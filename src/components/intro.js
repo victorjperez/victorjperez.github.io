@@ -11,10 +11,9 @@ function Intro() {
         <img
           src={createUrl(info.image).width(250).height(250)}
           alt="Person"
-          sizePx="180"
         />
         <div className="intro-keyinfo">
-          <h1>{info.name}</h1>
+          <h1>Victor J. Perez III</h1>
           <p>{info.introduction.en}</p>
         </div>
       </div>

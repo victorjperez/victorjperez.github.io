@@ -4,6 +4,7 @@ import './App.scss';
 // Components
 import Header from './components/header'
 import Intro from './components/intro'
+import MainPage from "./components/mainPage";
 // Helpers
 import apiCall from "./helpers/apiCall";
 import { InformationContext } from './helpers/informationContext'
@@ -29,7 +30,7 @@ function App() {
       {loadedData ? (
         <InformationContext.Provider value={person}>
           <Intro />
-          <p>{JSON.stringify(person)}</p>
+          <MainPage />  
         </InformationContext.Provider>
       ) : (
         ""

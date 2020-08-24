@@ -8,7 +8,6 @@ body {
     font-family: "Cardo", serif;
     a {
         color: black;
-        text-decoration: underline;
     }
 }
 a {
@@ -17,4 +16,9 @@ a {
 a:hover {
     text-shadow: 1px 1px 0 #8254eb, 2px 2px 0 white, 3px 3px 0 black;
     transition: 0.1s;
+}
+footer {
+    border-top: 1px solid black;
+    margin-top: 2%;
+    padding: 10px 20px;
 }

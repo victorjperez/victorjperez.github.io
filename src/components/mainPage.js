@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
-import format from "date-fns/format";
+import React, { useContext } from "react"
+import format from "date-fns/format"
 
-import { InformationContext } from "../helpers/informationContext";
+import { InformationContext } from "../helpers/informationContext"
 
-import "./styles/mainPage.scss";
+import "./styles/mainPage.scss"
 
 // Images
 import Divider from './assets/fancyDivider.svg'
 import Jaw from './assets/Jaw.svg'
-import Wireless from "./assets/wireless.svg";
-import Rania from "./assets/rania.svg";
-import RegRot from "./assets/RegRot.svg";
+import Wireless from "./assets/wireless.svg"
+import Rania from "./assets/rania.svg"
+import RegRot from "./assets/RegRot.svg"
+import GitHub from "./assets/github.png"
 
 function MainPage() {
     const info = useContext(InformationContext);
@@ -34,15 +35,17 @@ function MainPage() {
         {project.title.en === "RANIA Control System" ? (<img src={Rania} alt="Rania Logo" width="250px" />) : ""}
         {project.title.en === "Writing" ? (<img src={Jaw} alt="Jaw" width="250px" />) : ""}
         {project.title.en === "Wireless Fall 2019" ? (<img src={Wireless} alt="Wireless" width="450px" />) : ""}
-        <h3>{project.title.en}</h3>
+        <h3><a href={project.url !== undefined ? project.url : project.githubUrl}>{project.title.en}</a></h3>
         <p>{project.description.en}</p>
         <p className="dates">
           {format(new Date(project.start), 'MMM yyyy')} -{" "}
           {project.end !== undefined ? format(new Date(project.end), 'MMM yyyy') : "Present"}
         </p>
+        
         <span className="tech-section">
+        <a href={project.githubUrl} ><img src={GitHub} alt="Github link" width="20px"></img></a>
         {project.technologies.map((tech) => (
-          <p className="tech-title">{tech}</p>
+          <p className="tech-title" key={tech}>{tech}</p>
         ))}
         </span>
       </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import format from "date-fns/format";
 // Components
 import Header from './components/header'
 import Intro from './components/intro'
@@ -8,6 +7,7 @@ import MainPage from "./components/mainPage";
 // Helpers
 import apiCall from "./helpers/apiCall";
 import { InformationContext } from './helpers/informationContext'
+import './App.scss';
 function App() {
   const [person, setPerson] = useState({})
   const [loadedData, setLoadedData] = useState(false)
@@ -30,11 +30,14 @@ function App() {
       {loadedData ? (
         <InformationContext.Provider value={person}>
           <Intro />
-          <MainPage />  
+          <MainPage />
         </InformationContext.Provider>
       ) : (
         ""
       )}
+      <footer>
+        © {format(new Date(), 'yyyy')} Victor J Perez III. All Rights Reserved.
+      </footer>
     </div>
   );
 }

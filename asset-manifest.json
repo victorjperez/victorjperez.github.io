@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7dd9550f.chunk.css",
+    "main.js": "/static/js/main.124f5581.chunk.js",
+    "main.js.map": "/static/js/main.124f5581.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.99f91223.js",
+    "runtime-main.js.map": "/static/js/runtime-main.99f91223.js.map",
+    "static/js/2.3eeda292.chunk.js": "/static/js/2.3eeda292.chunk.js",
+    "static/js/2.3eeda292.chunk.js.map": "/static/js/2.3eeda292.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.effa0d72183fba2bf1e779f6d4aad50a.js": "/precache-manifest.effa0d72183fba2bf1e779f6d4aad50a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.7dd9550f.chunk.css.map": "/static/css/main.7dd9550f.chunk.css.map",
+    "static/js/2.3eeda292.chunk.js.LICENSE.txt": "/static/js/2.3eeda292.chunk.js.LICENSE.txt",
+    "static/media/Jaw.svg": "/static/media/Jaw.f19b0d5c.svg",
+    "static/media/RegRot.svg": "/static/media/RegRot.22f9c904.svg",
+    "static/media/fancyDivider.svg": "/static/media/fancyDivider.e6ce2aa7.svg",
+    "static/media/intro.scss": "/static/media/le-murmure.ff900880.otf",
+    "static/media/rania.svg": "/static/media/rania.efa06a74.svg",
+    "static/media/wireless.svg": "/static/media/wireless.13eae32c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.99f91223.js",
+    "static/js/2.3eeda292.chunk.js",
+    "static/css/main.7dd9550f.chunk.css",
+    "static/js/main.124f5581.chunk.js"
+  ]
+}

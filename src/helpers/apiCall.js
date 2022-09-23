@@ -30,6 +30,9 @@ function apiCall() {
         title,
         start,
         end,
+        title2,
+        start2,
+        end2,
         description,
       },
       professionalProjects[]->{

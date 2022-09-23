@@ -16,13 +16,18 @@ import GitHub from "./assets/github.png"
 function MainPage() {
     const info = useContext(InformationContext);
     const jobList = info.jobs.map((job) => (
-      <div className={"job-container " + job.company.name.replace(/\s+/g, '-') } key={job._id}>
+      <div
+        className={"job-container " + job.company.name.replace(/\s+/g, "-")}
+        key={job._id}
+      >
         <h3>{job.company.name}</h3>
         <h4>{job.title.en}</h4>
-        <p>{job.description.en}</p>
+        <p>{job.description && job.description.en}</p>
         <p className="dates">
-          {format(new Date(job.start), 'MMM yyyy')} -{" "}
-          {job.end !== undefined ? format(new Date(job.end), 'MMM yyyy') : "Present"}
+          {format(new Date(job.start), "MMM yyyy")} -{" "}
+          {job.end !== undefined
+            ? format(new Date(job.end), "MMM yyyy")
+            : "Present"}
         </p>
       </div>
     ));

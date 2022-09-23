@@ -23,7 +23,8 @@ function App() {
        }
      );
     console.log(person)
-  },[person])
+  },[])
+  
   return (
     <div className="App">
       <Header />
